@@ -7,7 +7,7 @@
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -25,6 +25,7 @@ end)
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.o.wrap = false
 
 -- Save undo history
 vim.o.undofile = true
@@ -45,6 +46,7 @@ vim.o.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.o.splitkeep = 'screen'
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -54,6 +56,11 @@ vim.o.splitbelow = true
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.shiftround = true
+vim.o.expandtab = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
@@ -65,10 +72,30 @@ vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
+vim.o.smoothscroll = true
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- smart settings
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.smarttab = true
+
+-- Enable termguicolors
+vim.o.termguicolors = true
+
+-- Folding
+vim.o.foldlevel = 99
+vim.o.foldmethod = 'indent'
+vim.o.foldtext = ''
+
+-- set filetypes
+vim.filetype.add {
+  extension = {
+    mdx = 'markdown',
+  },
+}
 -- vim: ts=2 sts=2 sw=2 et

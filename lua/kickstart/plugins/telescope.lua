@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 -- NOTE: Plugins can specify dependencies.
 --
 -- The dependencies are proper plugin specifications as well - anything
