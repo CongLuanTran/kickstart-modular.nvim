@@ -212,6 +212,8 @@ return {
         cssls = {},
         vimls = {},
         marksman = {},
+        tombi = {},
+        yamlls = {}
       }
 
       -- Config and enable server configs
