@@ -215,7 +215,8 @@ return {
         tombi = {},
         yamlls = {},
         jdtls = {},
-        emmet_ls = {}
+        emmet_language_server = {},
+        tailwindcss = {}
       }
 
       -- Config and enable server configs
@@ -254,12 +255,6 @@ return {
           end,
         },
       }
-      -- Show errors and warnings in a floating window
-      vim.api.nvim_create_autocmd('CursorHold', {
-        callback = function()
-          vim.diagnostic.open_float(nil, { focusable = false, source = true })
-        end,
-      })
     end,
   },
 }
