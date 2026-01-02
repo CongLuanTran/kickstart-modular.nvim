@@ -213,7 +213,9 @@ return {
         vimls = {},
         marksman = {},
         tombi = {},
-        yamlls = {}
+        yamlls = {},
+        jdtls = {},
+        emmet_ls = {}
       }
 
       -- Config and enable server configs
