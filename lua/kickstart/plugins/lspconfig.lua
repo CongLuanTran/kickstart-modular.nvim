@@ -10,7 +10,7 @@ return {
       library = {
         -- Load luvit types when the `vim.uv` word is found
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
-        { path = 'snacks.nvim',        words = { 'snacks' } },
+        { path = 'snacks.nvim', words = { 'snacks' } },
       },
     },
   },
@@ -190,6 +190,9 @@ return {
 
       local servers = {
         lua_ls = {},
+        bashls = {
+          filetypes = { 'bash', 'sh', 'zsh' },
+        },
         vtsls = {},
         basedpyright = {
           settings = {
@@ -216,7 +219,7 @@ return {
         yamlls = {},
         jdtls = {},
         emmet_language_server = {},
-        tailwindcss = {}
+        tailwindcss = {},
       }
 
       -- Config and enable server configs
