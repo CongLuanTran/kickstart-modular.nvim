@@ -1,9 +1,9 @@
 return {
-  { 'catppuccin/nvim',             name = 'catppuccin' },
-  { 'rose-pine/neovim',            name = 'rose-pine' },
-  { 'folke/tokyonight.nvim',       opts = {} },
+  { 'catppuccin/nvim', name = 'catppuccin' },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'folke/tokyonight.nvim', opts = {} },
   { 'EdenEast/nightfox.nvim' },
-  { 'ellisonleao/gruvbox.nvim',    opts = {} },
+  { 'ellisonleao/gruvbox.nvim', opts = {} },
   { 'miikanissi/modus-themes.nvim' },
   --- More colorscheme if you wish
   {
