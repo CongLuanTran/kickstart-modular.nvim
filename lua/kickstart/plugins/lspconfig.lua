@@ -220,6 +220,13 @@ return {
         jdtls = {},
         emmet_language_server = {},
         tailwindcss = {},
+        harper_ls = {
+          settings = {
+            ['harper-ls'] = {
+              dialect = 'British',
+            },
+          },
+        },
       }
 
       -- Config and enable server configs
