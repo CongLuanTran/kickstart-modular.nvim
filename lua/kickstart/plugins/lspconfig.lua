@@ -227,6 +227,11 @@ return {
             },
           },
         },
+        tinymist = {
+          settings = {
+            exportPdf = 'onType',
+          },
+        },
       }
 
       -- Config and enable server configs
