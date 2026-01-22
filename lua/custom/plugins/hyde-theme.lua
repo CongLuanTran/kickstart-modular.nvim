@@ -1,3 +1,16 @@
+if vim.fn.getenv 'XDG_CURRENT_DESKTOP' ~= 'hyprland' then
+  return {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    config = function()
+      require('catppuccin').setup {
+        auto_integrations = true,
+      }
+
+      vim.cmd.colorscheme 'catppuccin'
+    end,
+  }
+end
 return {
   { 'catppuccin/nvim', name = 'catppuccin' },
   { 'rose-pine/neovim', name = 'rose-pine' },
