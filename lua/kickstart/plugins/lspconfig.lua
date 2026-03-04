@@ -232,6 +232,7 @@ return {
             exportPdf = 'onType',
           },
         },
+        denols = {},
       }
 
       -- Config and enable server configs
