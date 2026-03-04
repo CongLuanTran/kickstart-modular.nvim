@@ -232,6 +232,7 @@ return {
         },
         tinymist = {
           settings = {
+            formatterMode = 'typstyle',
             exportPdf = 'onType',
           },
         },
