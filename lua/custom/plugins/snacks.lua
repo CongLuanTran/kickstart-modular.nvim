@@ -27,6 +27,7 @@ return {
     statuscolumn = {},
     words = {},
     terminal = {},
+    lazygit = {},
   },
   keys = {
     -- Search
@@ -142,6 +143,13 @@ return {
         Snacks.terminal()
       end,
       desc = 'Toggle Terminal',
+    },
+    {
+      '<leader>g',
+      function()
+        Snacks.lazygit()
+      end,
+      desc = 'Open Lazy[G]it',
     },
   },
 }
