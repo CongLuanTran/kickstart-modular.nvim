@@ -26,6 +26,7 @@ return {
     git = {},
     statuscolumn = {},
     words = {},
+    terminal = {},
   },
   keys = {
     -- Search
@@ -134,6 +135,13 @@ return {
         Snacks.picker.qflist()
       end,
       desc = '[S]earch [Q]uickfix List',
+    },
+    {
+      '<C-t>',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
     },
   },
 }
