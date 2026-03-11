@@ -121,5 +121,19 @@ return {
       end,
       desc = '[S]earch [A]utocmds',
     },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = '[S]earch [C]ommands',
+    },
+    {
+      '<leader>sq',
+      function()
+        Snacks.picker.qflist()
+      end,
+      desc = '[S]earch [Q]uickfix List',
+    },
   },
 }
