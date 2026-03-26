@@ -233,7 +233,8 @@ return {
         tinymist = {
           settings = {
             formatterMode = 'typstyle',
-            exportPdf = 'onType',
+            formatterProseWrap = true,
+            formatterPrintWidth = 80,
           },
         },
         denols = {},
