@@ -13,21 +13,39 @@ return {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
-    bigfile = {},
+    -- UI stuffs
     dashboard = { example = 'advanced' },
-    explorer = {},
-    indent = {},
-    input = {},
-    picker = {},
+    indent = {
+      chunk = { enabled = true },
+    },
     notifier = {},
-    quickfile = {},
-    scope = {},
-    scroll = {},
-    git = {},
     statuscolumn = {},
+
+    -- Picker and explorer
+    explorer = {},
+    picker = {
+      sources = {
+        explorer = {},
+        gh_issue = {},
+        gh_pr = {},
+      },
+    },
+
+    -- Utilities
+    scope = {},
+    bigfile = {},
+    input = {},
+    quickfile = {},
+    scroll = {},
     words = {},
-    terminal = {},
+
+    -- Git and Github
+    gh = {},
+    -- git = {},
     lazygit = {},
+
+    -- Terminal
+    terminal = {},
   },
   keys = {
     -- Search
@@ -145,11 +163,32 @@ return {
       desc = 'Toggle Terminal',
     },
     {
-      '<leader>g',
+      '<leader>gl',
       function()
         Snacks.lazygit()
       end,
-      desc = 'Open Lazy[G]it',
+      desc = 'Open [L]azy[G]it',
+    },
+    {
+      '<leader>gi',
+      function()
+        Snacks.picker.gh_issue()
+      end,
+      desc = 'Search [G]ithub [I]ssues',
+    },
+    {
+      '<leader>gp',
+      function()
+        Snacks.picker.gh_pr()
+      end,
+      desc = 'Search [G]ithub [P]R',
+    },
+    {
+      '<leader>e',
+      function()
+        Snacks.explorer()
+      end,
+      desc = 'Toggle [E]xplorer',
     },
   },
 }
