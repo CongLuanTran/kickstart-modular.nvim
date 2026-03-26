@@ -20,6 +20,8 @@ return {
     },
     notifier = {},
     statuscolumn = {},
+    toggle = {},
+    zen = {},
 
     -- Picker and explorer
     explorer = {},
@@ -47,6 +49,16 @@ return {
     -- Terminal
     terminal = {},
   },
+  config = function(_, opts)
+    Snacks.setup(opts)
+    Snacks.toggle.indent():map '<leader>u|'
+    Snacks.toggle.line_number():map '<leader>ul'
+    Snacks.toggle.diagnostics():map '<leader>ud'
+    Snacks.toggle.inlay_hints():map '<leader>uh'
+    Snacks.toggle.zen():map '<leader>uz'
+    Snacks.toggle.zoom():map '<leader>uZ'
+  end,
+
   keys = {
     -- Search
     {
