@@ -21,6 +21,8 @@ return {
     notifier = {},
     statuscolumn = {},
     toggle = {},
+    win = {},
+    layout = {},
     zen = {},
 
     -- Picker and explorer
