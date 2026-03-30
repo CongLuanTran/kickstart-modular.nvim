@@ -228,6 +228,8 @@ return {
           },
         },
         denols = {},
+        oxlint = {},
+        oxfmt = {},
       }
 
       -- Config and enable server configs
