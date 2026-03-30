@@ -1,16 +1,7 @@
 return {
-  {
-    'github/copilot.vim',
-    options = {},
+  'zbirenbaum/copilot.lua',
+  dependencies = {
+    'copilotlsp-nvim/copilot-lsp', -- (optional) for NES functionality
   },
-  {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim', branch = 'master' },
-    },
-    build = 'make tiktoken',
-    opts = {
-      -- See Configuration section for options
-    },
-  },
+  opts = {},
 }
