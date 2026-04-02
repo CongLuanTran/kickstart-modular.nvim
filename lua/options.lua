@@ -98,4 +98,7 @@ vim.filetype.add {
     mdx = 'markdown',
   },
 }
+-- Enable built-in nohlsearch
+vim.cmd 'packadd nohlsearch'
+
 -- vim: ts=2 sts=2 sw=2 et
