@@ -6,7 +6,7 @@ return {
     lazy = false,
     dependencies = { { 'nvim-treesitter/nvim-treesitter-textobjects', lazy = true } },
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
-    branch = "master",
+    branch = 'master',
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
@@ -32,15 +32,6 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby', 'lua', 'yaml' } },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<cr>',
-          node_incremental = '<cr>',
-          scope_incremental = false,
-          node_decremental = '<bs>',
-        },
-      },
       textobjects = {
         select = {
           enable = true,
