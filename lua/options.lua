@@ -98,6 +98,10 @@ vim.filetype.add {
     mdx = 'markdown',
   },
 }
+
+-- Enable Neovim 0.12 built-in undo tree
+vim.cmd 'packadd nvim.undotree'
+
 -- Enable built-in nohlsearch
 vim.cmd 'packadd nohlsearch'
 
