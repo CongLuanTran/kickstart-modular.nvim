@@ -65,6 +65,7 @@ return {
         { '<leader>d', group = '[D]ebug' },
         { '<leader>g', group = '[G]it' },
         { '<leader>u', group = '[U]I' },
+        { '<leader>n', group = '[N]oice' },
       },
     },
   },
