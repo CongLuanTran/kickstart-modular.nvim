@@ -10,6 +10,9 @@ local ensure_installed = {
   'query',
   'vim',
   'vimdoc',
+  'javascript',
+  'typescript',
+  'rust',
 }
 return {
   { -- Highlight, edit, and navigate code
