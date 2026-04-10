@@ -1,3 +1,4 @@
+if 1 then return {} end
 if vim.fn.getenv 'XDG_CURRENT_DESKTOP' ~= 'hyprland' then
   return {
     'catppuccin/nvim',
