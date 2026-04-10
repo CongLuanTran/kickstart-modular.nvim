@@ -32,34 +32,10 @@ return {
   },
   keys = {
     { '<leader>n', desc = '[N]otifications' },
-    {
-      '<leader>nl',
-      function()
-        require('noice').cmd 'last'
-      end,
-      desc = '[N]oice [L]ast Message',
-    },
-    {
-      '<leader>nh',
-      function()
-        require('noice').cmd 'history'
-      end,
-      desc = '[N]oice [H]istory',
-    },
-    {
-      '<leader>na',
-      function()
-        require('noice').cmd 'all'
-      end,
-      desc = '[N]oice [A]ll',
-    },
-    {
-      '<leader>nd',
-      function()
-        require('noice').cmd 'dismiss'
-      end,
-      desc = '[D]ismiss All [N]otifications',
-    },
+    { '<leader>nl', function() require('noice').cmd 'last' end, desc = '[N]oice [L]ast Message' },
+    { '<leader>nh', function() require('noice').cmd 'history' end, desc = '[N]oice [H]istory' },
+    { '<leader>na', function() require('noice').cmd 'all' end, desc = '[N]oice [A]ll' },
+    { '<leader>nd', function() require('noice').cmd 'dismiss' end, desc = '[D]ismiss All [N]otifications' },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

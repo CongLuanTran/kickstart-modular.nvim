@@ -6,12 +6,8 @@ return {
     opts = {
       server = {
         on_attach = function(_, bufnr)
-          vim.keymap.set('n', 'gra', function()
-            vim.cmd.RustLsp 'codeAction'
-          end, { desc = '[G]oto Code [A]ction', buffer = bufnr, silent = true })
-          vim.keymap.set('n', 'K', function()
-            vim.cmd.RustLsp { 'hover', 'actions' }
-          end, { silent = true, buffer = bufnr })
+          vim.keymap.set('n', 'gra', function() vim.cmd.RustLsp 'codeAction' end, { desc = '[G]oto Code [A]ction', buffer = bufnr, silent = true })
+          vim.keymap.set('n', 'K', function() vim.cmd.RustLsp { 'hover', 'actions' } end, { silent = true, buffer = bufnr })
         end,
         default_settings = {
           cargo = {
@@ -40,9 +36,7 @@ return {
         },
       },
     },
-    config = function(_, opts)
-      vim.g.rustaceanvim = vim.tbl_deep_extend('keep', vim.g.rustaceanvim or {}, opts or {})
-    end,
+    config = function(_, opts) vim.g.rustaceanvim = vim.tbl_deep_extend('keep', vim.g.rustaceanvim or {}, opts or {}) end,
   },
   {
     'Saecki/crates.nvim',
