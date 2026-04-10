@@ -221,13 +221,6 @@ return {
         jdtls = {},
         emmet_language_server = {},
         tailwindcss = {},
-        harper_ls = {
-          settings = {
-            ['harper-ls'] = {
-              dialect = 'British',
-            },
-          },
-        },
         tinymist = {
           settings = {
             formatterMode = 'typstyle',
@@ -239,6 +232,75 @@ return {
         oxlint = {},
         oxfmt = {},
       }
+
+      -- I have a feeling that this will be buggy
+      -- But let's see how it goes
+      vim.lsp.config('harper_ls', {
+        settings = {
+          ['harper-ls'] = {
+            dialect = 'British',
+          },
+        },
+      })
+
+      Snacks.toggle
+        .new({
+          id = 'harper_global',
+          name = 'Global Harper',
+          get = function()
+            return vim.lsp.is_enabled 'harper_ls'
+          end,
+          set = function(state)
+            -- global autoattach switch
+            vim.lsp.enable('harper_ls', state)
+
+            -- if turning OFF, also remove all existing local/manual attachments
+            if not state then
+              for _, client in ipairs(vim.lsp.get_clients { name = 'harper_ls' }) do
+                for bufnr in pairs(client.attached_buffers or {}) do
+                  vim.lsp.buf_detach_client(bufnr, client.id)
+                end
+                client:stop()
+              end
+            end
+          end,
+        })
+        :map '<leader>tH'
+
+      Snacks.toggle
+        .new({
+          id = 'harper_local',
+          name = 'Local Harper',
+          get = function()
+            if not vim.lsp.is_enabled 'harper_ls' then
+              return false
+            end
+
+            return #vim.lsp.get_clients {
+              bufnr = 0,
+              name = 'harper_ls',
+            } > 0
+          end,
+          set = function(state)
+            local bufnr = vim.api.nvim_get_current_buf()
+
+            local clients = vim.lsp.get_clients {
+              bufnr = bufnr,
+              name = 'harper_ls',
+            }
+
+            if state then
+              if #clients == 0 then
+                vim.lsp.start(vim.tbl_extend('force', vim.lsp.config.harper_ls, { bufnr = bufnr }))
+              end
+            else
+              for _, client in ipairs(clients) do
+                vim.lsp.buf_detach_client(bufnr, client.id)
+              end
+            end
+          end,
+        })
+        :map '<leader>th'
 
       -- Config and enable server configs
       for name, cfg in pairs(servers) do
