@@ -59,6 +59,70 @@ return {
     Snacks.toggle.inlay_hints():map '<leader>uh'
     Snacks.toggle.zen():map '<leader>uz'
     Snacks.toggle.zoom():map '<leader>uZ'
+
+    -- Rename the variable under your cursor.
+    --  Most Language Servers support renaming across files, etc.
+    Snacks.keymap.set('n', 'grn', vim.lsp.buf.rename, {
+      lsp = { method = 'textDocument/rename' },
+      desc = '[R]e[n]ame',
+    })
+
+    -- Execute a code action, usually your cursor needs to be on top of an error
+    -- or a suggestion from your LSP for this to activate.
+    Snacks.keymap.set({ 'n', 'x' }, 'gra', vim.lsp.buf.code_action, {
+      lsp = { method = 'textDocument/codeAction' },
+      desc = '[G]oto Code [A]ction',
+    })
+
+    -- Find references for the word under your cursor.
+    Snacks.keymap.set('n', 'grr', Snacks.picker.lsp_references, {
+      lsp = { method = 'textDocument/references' },
+      desc = '[G]oto [R]eferences',
+    })
+
+    -- Jump to the implementation of the word under your cursor.
+    --  Useful when your language has ways of declaring types without an actual implementation.
+    Snacks.keymap.set('n', 'gri', Snacks.picker.lsp_implementations, {
+      lsp = { method = 'textDocument/implementation' },
+      desc = '[G]oto [I]mplementation',
+    })
+
+    -- Jump to the definition of the word under your cursor.
+    --  This is where a variable was first declared, or where a function is defined, etc.
+    --  To jump back, press <C-t>.
+    Snacks.keymap.set('n', 'grd', Snacks.picker.lsp_definitions, {
+      lsp = { method = 'textDocument/definition' },
+      desc = '[G]oto [D]efinition',
+    })
+
+    -- WARN: This is not Goto Definition, this is Goto Declaration.
+    --  For example, in C this would take you to the header.
+    Snacks.keymap.set('n', 'grD', Snacks.picker.lsp_declarations, {
+      lsp = { method = 'textDocument/declaration' },
+      desc = '[G]oto [D]eclaration',
+    })
+
+    -- Fuzzy find all the symbols in your current document.
+    --  Symbols are things like variables, functions, types, etc.
+    Snacks.keymap.set('n', 'gO', Snacks.picker.lsp_symbols, {
+      lsp = { method = 'textDocument/documentSymbol' },
+      desc = 'Open Document Symbols',
+    })
+
+    -- Fuzzy find all the symbols in your current workspace.
+    --  Similar to document symbols, except searches over your entire project.
+    Snacks.keymap.set('n', 'gW', Snacks.picker.lsp_workspace_symbols, {
+      lsp = { method = 'workspace/symbol' },
+      desc = 'Open Workspace Symbols',
+    })
+
+    -- Jump to the type of the word under your cursor.
+    --  Useful when you're not sure what type a variable is and you want to see
+    --  the definition of its *type*, not where it was *defined*.
+    Snacks.keymap.set('n', 'grt', Snacks.picker.lsp_type_definitions, {
+      lsp = { method = 'textDocument/typeDefinition' },
+      desc = '[G]oto [T]ype Definition',
+    })
   end,
 
   keys = {
