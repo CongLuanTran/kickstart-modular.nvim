@@ -94,9 +94,7 @@ return {
         group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if client == nil then
-            return
-          end
+          if client == nil then return end
           if client.name == 'ruff' then
             -- Disable hover in favor of Pyright
             client.server_capabilities.hoverProvider = false
@@ -165,9 +163,7 @@ return {
         .new({
           id = 'harper_global',
           name = 'Global Harper',
-          get = function()
-            return vim.lsp.is_enabled 'harper_ls'
-          end,
+          get = function() return vim.lsp.is_enabled 'harper_ls' end,
           set = function(state)
             -- global autoattach switch
             vim.lsp.enable('harper_ls', state)
@@ -190,9 +186,7 @@ return {
           id = 'harper_local',
           name = 'Local Harper',
           get = function()
-            if not vim.lsp.is_enabled 'harper_ls' then
-              return false
-            end
+            if not vim.lsp.is_enabled 'harper_ls' then return false end
 
             return #vim.lsp.get_clients {
               bufnr = 0,
@@ -208,9 +202,7 @@ return {
             }
 
             if state then
-              if #clients == 0 then
-                vim.lsp.start(vim.tbl_extend('force', vim.lsp.config.harper_ls, { bufnr = bufnr }))
-              end
+              if #clients == 0 then vim.lsp.start(vim.tbl_extend('force', vim.lsp.config.harper_ls, { bufnr = bufnr })) end
             else
               for _, client in ipairs(clients) do
                 vim.lsp.buf_detach_client(bufnr, client.id)
@@ -222,40 +214,9 @@ return {
 
       -- Config and enable server configs
       for name, cfg in pairs(servers) do
-        if cfg then
-          vim.lsp.config(name, cfg)
-        end
+        if cfg then vim.lsp.config(name, cfg) end
         vim.lsp.enable(name)
       end
-
-      -- Diagnostic Config
-      -- See :help vim.diagnostic.Opts
-      vim.diagnostic.config {
-        severity_sort = true,
-        float = { border = 'rounded', source = true },
-        underline = true,
-        signs = vim.g.have_nerd_font and {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
-          },
-        } or {},
-        virtual_text = {
-          source = true,
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
-      }
     end,
   },
 }
