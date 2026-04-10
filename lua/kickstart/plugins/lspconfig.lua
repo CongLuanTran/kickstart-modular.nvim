@@ -143,7 +143,7 @@ return {
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          if client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+          if client:supports_method('textDocument/documentHighlight', event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'InsertLeave' }, {
               buffer = event.buf,
