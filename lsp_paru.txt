@@ -1,0 +1,16 @@
+lua-language-server
+stylua
+bash-language-server
+shellcheck
+shfmt
+vscode-json-languageserver
+vscode-html-languageserver
+vscode-css-languageserver
+tailwindcss-language-server
+marksman
+markdownlint-cli2
+tombi
+yaml-language-server
+tinymist
+deno
+
