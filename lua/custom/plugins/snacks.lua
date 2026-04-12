@@ -142,10 +142,50 @@ return {
     { '<leader>sa', function() Snacks.picker.autocmds() end, desc = '[S]earch [A]utocmds' },
     { '<leader>sc', function() Snacks.picker.commands() end, desc = '[S]earch [C]ommands' },
     { '<leader>sq', function() Snacks.picker.qflist() end, desc = '[S]earch [Q]uickfix List' },
+    -- Terminal
     { '<C-t>', function() Snacks.terminal() end, desc = 'Toggle Terminal' },
+    -- Git
     { '<leader>gl', function() Snacks.lazygit() end, desc = 'Open [L]azy[G]it' },
     { '<leader>gi', function() Snacks.picker.gh_issue() end, desc = 'Search [G]ithub [I]ssues' },
     { '<leader>gp', function() Snacks.picker.gh_pr() end, desc = 'Search [G]ithub [P]R' },
-    { '<leader>e', function() Snacks.explorer() end, desc = 'Toggle [E]xplorer' },
+    -- Explorer
+    { '<leader>E', function() Snacks.explorer { cwd = vim.fn.expand '%:p:h' } end, desc = 'Toggle [E]xplorer at cwd' },
+    {
+      '<leader>e',
+      function()
+        local function find_root()
+          local bufnr = vim.api.nvim_get_current_buf()
+
+          local clients = vim.lsp.get_clients { bufnr = bufnr }
+
+          for _, client in ipairs(clients) do
+            if client.name ~= 'copilot' then
+              local ws = client.workspace_folders
+
+              if ws and #ws > 0 then
+                local root = vim.uri_to_fname(ws[1].uri)
+                if root and root ~= '' then return root end
+              end
+
+              if client.root_dir and client.root_dir ~= '' then return client.root_dir end
+            end
+          end
+
+          local path = vim.api.nvim_buf_get_name(bufnr)
+
+          if path ~= '' then
+            path = vim.fn.fnamemodify(path, ':p:h')
+            local git = vim.fs.find('.git', { path = path, upward = true })[1]
+
+            return git and vim.fs.dirname(git) or path
+          end
+
+          return vim.uv.cwd()
+        end
+
+        Snacks.explorer { cwd = find_root() }
+      end,
+      desc = 'Toggle [E]xplorer at root',
+    },
   },
 }
