@@ -109,16 +109,17 @@ return {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
         vtsls = {},
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              disableOrganizeImports = true,
-              analysis = {
-                typeCheckingMode = 'basic',
-              },
-            },
-          },
-        },
+        pyrefly = {},
+        -- basedpyright = {
+        --   settings = {
+        --     basedpyright = {
+        --       disableOrganizeImports = true,
+        --       analysis = {
+        --         typeCheckingMode = 'basic',
+        --       },
+        --     },
+        --   },
+        -- },
         bacon_ls = {},
         ruff = {},
         jsonls = {
