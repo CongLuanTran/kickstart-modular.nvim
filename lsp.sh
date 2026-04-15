@@ -19,6 +19,7 @@ fi
 if command -v uv >/dev/null 2>&1; then
   uv tool install ruff@latest
   uv tool install basedpyright
+  uv tool install pyrefly
 else
   echo "uv was not found, the following LSPs are not installed:
   ruff (python linter and formatter)
