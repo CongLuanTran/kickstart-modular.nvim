@@ -148,6 +148,7 @@ return {
         },
         denols = {},
         oxlint = {},
+        gopls = {},
       }
 
       -- I have a feeling that this will be buggy

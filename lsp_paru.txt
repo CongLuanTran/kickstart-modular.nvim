@@ -13,4 +13,5 @@ tombi
 yaml-language-server
 tinymist
 deno
+gopls
 
