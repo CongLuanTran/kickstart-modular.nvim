@@ -93,6 +93,13 @@ require('lazy').setup({
   change_detection = {
     notify = false,
   },
+  performance = {
+    rtp = {
+      paths = {
+        '/usr/share/nvim/site',
+      },
+    },
+  },
 })
 
 -- vim: ts=2 sts=2 sw=2 et
