@@ -1,0 +1,8 @@
+@vtsls/language-server
+vim-language-server
+@olrtg/emmet-language-server
+oxlint
+oxfmt
+@fsouza/prettierd
+prettier
+

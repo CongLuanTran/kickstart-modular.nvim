@@ -1,19 +1,16 @@
 #!/bin/env bash
 
-readarray -t lsp_list <./lsp_paru.txt
-paru -S --needed "${lsp_list[@]}"
+readarray -t lsp_paru <./lsp_paru.txt
+paru -S --needed "${lsp_paru[@]}"
 
+readarray -t lsp_ts_js <./lsp_ts_js.txt
 if command -v pnpm >/dev/null 2>&1; then
-  pnpm add -g @vtsls/language-server vim-language-server @olrtg/emmet-language-server oxlint oxfmt @fsouza/prettierd prettier
+  pnpm add -g "${lsp_ts_js[@]}"
 elif command -v npm >/dev/null 2>&1; then
-  npm i -g @vtsls/language-server vim-language-server @olrtg/emmet-language-server oxlint oxfmt @fsouza/prettierd prettier
+  npm i -g "${lsp_ts_js[@]}"
 else
-  echo "Neither pnpm or npm was found, the following LSPs are not installed:
-  vtsls (for typescript/javascript)
-  vim-language-server
-  emmet-language-server
-  oxlint
-  oxfmt"
+  echo "Neither pnpm or npm was found, the following LSPs are not installed:"
+  printf "%s\n" "${lsp_ts_js[@]}"
 fi
 
 if command -v uv >/dev/null 2>&1; then
