@@ -5,4 +5,4 @@ oxlint
 oxfmt
 @fsouza/prettierd
 prettier
-
+fish-lsp
