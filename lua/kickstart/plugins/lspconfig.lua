@@ -108,6 +108,7 @@ return {
         bashls = {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
+        fish_lsp = {},
         vtsls = {},
         pyrefly = {},
         -- basedpyright = {
