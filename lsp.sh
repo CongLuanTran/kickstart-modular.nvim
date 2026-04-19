@@ -20,7 +20,8 @@ if command -v uv >/dev/null 2>&1; then
 else
   echo "uv was not found, the following LSPs are not installed:
   ruff (python linter and formatter)
-  basedpyright (python lsp and typechecker)"
+  basedpyright (python lsp and typechecker)
+  pyrefly (alternative python lsp)"
 fi
 
 if command -v cargo >/dev/null 2>&1; then
