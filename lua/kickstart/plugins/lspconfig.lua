@@ -109,6 +109,7 @@ return {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
         fish_lsp = {},
+        clangd = {},
         vtsls = {},
         pyrefly = {},
         -- basedpyright = {
