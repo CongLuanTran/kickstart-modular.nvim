@@ -14,5 +14,5 @@ yaml-language-server
 tinymist
 deno
 gopls
-clangd
+clang
 markdown-oxide
