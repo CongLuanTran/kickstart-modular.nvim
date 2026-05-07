@@ -111,7 +111,15 @@ return {
         fish_lsp = {},
         clangd = {},
         vtsls = {},
-        pyrefly = {},
+        pyrefly = {
+          settings = {
+            python = {
+              pyrefly = {
+                displayTypeErrors = 'force-on',
+              },
+            },
+          },
+        },
         -- basedpyright = {
         --   settings = {
         --     basedpyright = {
