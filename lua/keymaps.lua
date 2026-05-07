@@ -70,8 +70,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Emacs emulator in Insert mode
 local opts = { noremap = true, silent = true }
 
--- vim.keymap.set('i', '<C-f>', '<Right>', opts)
--- vim.keymap.set('i', '<C-b>', '<Left>', opts)
+vim.keymap.set('i', '<C-f>', '<Right>', opts)
+vim.keymap.set('i', '<C-b>', '<Left>', opts)
 vim.keymap.set('i', '<C-n>', '<Down>', opts)
 vim.keymap.set('i', '<C-p>', '<Up>', opts)
 vim.keymap.set('i', '<M-f>', '<C-Right>', opts)
