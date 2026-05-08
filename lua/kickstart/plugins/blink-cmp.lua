@@ -26,7 +26,18 @@ return {
         },
         opts = {},
       },
-      'folke/lazydev.nvim',
+      {
+        'folke/lazydev.nvim',
+        ft = 'lua', -- only load on lua files
+        opts = {
+          library = {
+            -- See the configuration section for more details
+            -- Load luvit types when the `vim.uv` word is found
+            { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+          },
+        },
+      },
+      'https://git.barrettruth.com/barrettruth/blink-cmp-ghostty.git',
     },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -72,9 +83,14 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'omni', 'path', 'snippets', 'lazydev' },
+        default = { 'lsp', 'snippets', 'buffer', 'path' },
+        per_filetype = {
+          lua = { inherit_defaults = true, 'lazydev' },
+          ghostty = { 'ghostty' },
+        },
         providers = {
-          lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink', score_offset = 100 },
+          ghostty = { name = 'Ghostty', module = 'blink-cmp-ghostty' },
         },
       },
 
