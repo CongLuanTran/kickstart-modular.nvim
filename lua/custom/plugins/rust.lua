@@ -1,7 +1,7 @@
 return {
   {
     'mrcjkb/rustaceanvim',
-    version = '^8', -- Recommended
+    version = '^9', -- Recommended
     lazy = false, -- This plugin is already lazy
     opts = {
       server = {
@@ -10,28 +10,31 @@ return {
           vim.keymap.set('n', 'K', function() vim.cmd.RustLsp { 'hover', 'actions' } end, { silent = true, buffer = bufnr })
         end,
         default_settings = {
-          cargo = {
-            allFeatures = true,
-            loadOutDirsFromCheck = true,
-            buildScripts = { enable = true },
-          },
-          checkOnSave = false,
-          diagnostics = { enable = false },
-          procMacro = { enable = true },
-          files = {
-            exclude = {
-              '.direnv',
-              '.git',
-              '.jj',
-              '.github',
-              '.gitlab',
-              'bin',
-              'node_modules',
-              'target',
-              'venv',
-              '.venv',
+          -- rust-analyzer language server configuration
+          ['rust-analyzer'] = {
+            cargo = {
+              allFeatures = true,
+              loadOutDirsFromCheck = true,
+              buildScripts = { enable = true },
             },
-            watcher = 'client',
+            checkOnSave = false,
+            diagnostics = { enable = false },
+            procMacro = { enable = true },
+            files = {
+              exclude = {
+                '.direnv',
+                '.git',
+                '.jj',
+                '.github',
+                '.gitlab',
+                'bin',
+                'node_modules',
+                'target',
+                'venv',
+                '.venv',
+              },
+              watcher = 'client',
+            },
           },
         },
       },
