@@ -160,6 +160,7 @@ return {
         oxlint = {},
         gopls = {},
         docker_language_server = {},
+        zls = {},
       }
 
       vim.api.nvim_create_autocmd('LspAttach', {
