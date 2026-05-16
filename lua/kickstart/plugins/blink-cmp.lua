@@ -40,6 +40,7 @@ return {
       'https://git.barrettruth.com/barrettruth/blink-cmp-ghostty.git',
       'disrupted/blink-cmp-conventional-commits',
       'archie-judd/blink-cmp-words',
+      'fang2hou/blink-copilot',
     },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -85,7 +86,7 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'snippets', 'buffer', 'path' },
+        default = { 'copilot', 'lsp', 'snippets', 'buffer', 'path' },
         per_filetype = {
           lua = { inherit_defaults = true, 'lazydev' },
           ghostty = { 'ghostty' },
@@ -143,6 +144,13 @@ return {
               -- See above
               definition_pointers = { '!', '&', '^' },
             },
+          },
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+            opts = {},
           },
         },
       },
