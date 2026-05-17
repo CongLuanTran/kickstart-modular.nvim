@@ -1,0 +1,166 @@
+{
+  "plugins": {
+    "FixCursorHold.nvim": {
+      "rev": "1900f89dc17c603eec29960f57c00bd9ae696495",
+      "src": "https://github.com/antoinemadec/FixCursorHold.nvim"
+    },
+    "better-escape.nvim": {
+      "rev": "3f4bc0b326606264ff75967f59091b5ddada0554",
+      "src": "https://github.com/max397574/better-escape.nvim"
+    },
+    "blink-cmp-conventional-commits": {
+      "rev": "28f46593ef5e03ba7525bdf6075be0c56c6ceb55",
+      "src": "https://github.com/disrupted/blink-cmp-conventional-commits"
+    },
+    "blink-cmp-ghostty": {
+      "rev": "2c74f96787956c64922a1d6cca76fc502db16bb4",
+      "src": "https://git.barrettruth.com/barrettruth/blink-cmp-ghostty.git"
+    },
+    "blink-cmp-words": {
+      "rev": "d6a56f532a1826b4f3aeed4d5e2fe7b8743a9244",
+      "src": "https://github.com/archie-judd/blink-cmp-words"
+    },
+    "blink-copilot": {
+      "rev": "7ad8209b2f880a2840c94cdcd80ab4dc511d4f39",
+      "src": "https://github.com/fang2hou/blink-copilot"
+    },
+    "blink.cmp": {
+      "rev": "2ef3db111181c5eef22a462aa0122349a6027f28",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "blink.lib": {
+      "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+      "src": "https://github.com/saghen/blink.lib"
+    },
+    "catppuccin": {
+      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "codecompanion.nvim": {
+      "rev": "60d031862715a77b3655eac724e8926965e47b86",
+      "src": "https://www.github.com/olimorris/codecompanion.nvim",
+      "version": "19.0.0 - 20.0.0"
+    },
+    "conform.nvim": {
+      "rev": "18aeab3d63d350dcf44d64c462cc489a3412af40",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "copilot-lsp": {
+      "rev": "1b6d8273594643f51bb4c0c1d819bdb21b42159d",
+      "src": "https://github.com/copilotlsp-nvim/copilot-lsp"
+    },
+    "copilot.lua": {
+      "rev": "407349117f176789df6ec1c23bca72f34e15b4e8",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
+    "crates.nvim": {
+      "rev": "694357861ec9ebf12475ddcdd04ea45a0923c32d",
+      "src": "https://github.com/Saecki/crates.nvim"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "guess-indent.nvim": {
+      "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
+      "src": "https://github.com/NMAC427/guess-indent.nvim"
+    },
+    "lazydev.nvim": {
+      "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
+      "src": "https://github.com/folke/lazydev.nvim"
+    },
+    "markview.nvim": {
+      "rev": "a55e91f25994617a477d4a0e0b326f9dfa648f80",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
+    "mini.nvim": {
+      "rev": "18797ed18f347d0d0da27fec28a67979b1207f70",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "neotest": {
+      "rev": "ad991822b7076b1d940b33a9d6d0d30416d5df81",
+      "src": "https://github.com/nvim-neotest/neotest"
+    },
+    "neotest-plenary": {
+      "rev": "3523adcf9ffaad1911960c5813b0136c1b63a2ec",
+      "src": "https://github.com/nvim-neotest/neotest-plenary"
+    },
+    "neotest-python": {
+      "rev": "e6df4f1892f6137f58135917db24d1655937d831",
+      "src": "https://github.com/nvim-neotest/neotest-python"
+    },
+    "neotest-vim-test": {
+      "rev": "75c4228882ae4883b11bfce9b8383e637eb44192",
+      "src": "https://github.com/nvim-neotest/neotest-vim-test"
+    },
+    "noice.nvim": {
+      "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
+      "src": "https://github.com/folke/noice.nvim"
+    },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-autopairs": {
+      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
+    "nvim-lint": {
+      "rev": "665525810630701b84181e4d9eefd24b49845b29",
+      "src": "https://github.com/mfussenegger/nvim-lint"
+    },
+    "nvim-lspconfig": {
+      "rev": "f9349d4d99e7d66403ae8bf4fbd357b154dca7a7",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
+    },
+    "nvim-notify": {
+      "rev": "8701bece920b38ea289b457f902e2ad184131a5d",
+      "src": "https://github.com/rcarriga/nvim-notify"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    "nvim-ts-autotag": {
+      "rev": "88c1453db4ba7dd24131086fe51fdf74e587d275",
+      "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
+    "nvim-web-devicons": {
+      "rev": "2795c26c916bb3c57dde308b82be51971fa92747",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "rustaceanvim": {
+      "rev": "a60811ae6054ba981cb4693aaecd715dea783327",
+      "src": "https://github.com/mrcjkb/rustaceanvim",
+      "version": "9.0.0 - 10.0.0"
+    },
+    "schemastore.nvim": {
+      "rev": "b0d5f4876c84f7c5c808ae4be4e05dd8207102d0",
+      "src": "https://github.com/b0o/schemastore.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
+      "src": "https://github.com/folke/which-key.nvim"
+    }
+  }
+}
