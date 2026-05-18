@@ -21,7 +21,7 @@ local ensure_installed = {
   'rust',
 }
 
-ts = require 'nvim-treesitter'
+local ts = require 'nvim-treesitter'
 
 ts.install(ensure_installed)
 
