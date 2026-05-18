@@ -1,12 +1,10 @@
 vim.pack.add {
   'https://github.com/folke/snacks.nvim',
   'https://github.com/MunifTanjim/nui.nvim',
+  'https://github.com/nvim-tree/nvim-web-devicons',
 }
 
-if vim.g.have_nerd_font then
-  vim.pack.add { 'https://github.com/nvim-tree/nvim-web-devicons' }
-  require('nvim-web-devicons').setup {}
-end
+require('nvim-web-devicons').setup {}
 
 Snacks.setup {
   -- UI stuffs

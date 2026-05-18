@@ -6,17 +6,16 @@ require('which-key').setup {
   -- delay between pressing a key and opening which-key (milliseconds)
   -- this setting is independent of vim.o.timeoutlen
   delay = 0,
-  icons = { mappings = vim.g.have_nerd_font },
 
   -- Document existing key chains
   spec = {
-    { '<leader>s', group = '[S]earch' },
-    { '<leader>t', group = '[T]oggle' },
-    { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-    { '<leader>d', group = '[D]ebug' },
-    { '<leader>g', group = '[G]it' },
-    { '<leader>u', group = '[U]I' },
-    { '<leader>n', group = '[N]otifications' },
+    { '<leader>s', desc = 'Search' },
+    { '<leader>t', group = 'Toggle' },
+    { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
+    { '<leader>d', group = 'Debug' },
+    { '<leader>g', group = 'Git' },
+    { '<leader>u', group = 'UI' },
+    { '<leader>n', group = 'Notifications' },
     { 'gr', group = 'LSP Actions', mode = { 'n' } },
   },
 }
