@@ -5,7 +5,6 @@ vim.pack.add {
   'https://git.barrettruth.com/barrettruth/blink-cmp-ghostty.git',
   'https://github.com/disrupted/blink-cmp-conventional-commits',
   'https://github.com/archie-judd/blink-cmp-words',
-  'https://github.com/fang2hou/blink-copilot',
 }
 local cmp = require 'blink.cmp'
 cmp.build():wait(60000)
@@ -51,7 +50,7 @@ cmp.setup {
   },
 
   sources = {
-    default = { 'copilot', 'lsp', 'snippets', 'buffer', 'path' },
+    default = { 'lsp', 'snippets', 'buffer', 'path' },
     per_filetype = {
       lua = { inherit_defaults = true, 'lazydev' },
       ghostty = { 'ghostty' },
@@ -109,13 +108,6 @@ cmp.setup {
           -- See above
           definition_pointers = { '!', '&', '^' },
         },
-      },
-      copilot = {
-        name = 'copilot',
-        module = 'blink-copilot',
-        score_offset = 100,
-        async = true,
-        opts = {},
       },
     },
   },
