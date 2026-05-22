@@ -6,12 +6,13 @@ vim.pack.add {
 
 require('copilot').setup {
   suggestion = {
-    auto_trigger = true,
     keymap = {
       accept = '<C-l>',
     },
   },
 }
+
+vim.keymap.set('n', '<leader>tc', function() require('copilot.suggestion').toggle_auto_trigger() end, { desc = 'Toggle Copilot' })
 
 vim.api.nvim_create_autocmd('User', {
   pattern = 'BlinkCmpMenuOpen',
