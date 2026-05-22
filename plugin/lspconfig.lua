@@ -141,6 +141,8 @@ local servers = {
   gopls = {},
   docker_language_server = {},
   zls = {},
+  terraformls = {},
+  tflint = {},
 }
 
 vim.api.nvim_create_autocmd('LspAttach', {

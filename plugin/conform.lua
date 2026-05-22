@@ -31,6 +31,7 @@ conform.setup {
     json = { 'oxfmt' },
     vue = { 'oxfmt' },
     markdown = { 'prettierd', 'prettier', stop_after_first = true },
+    terraform = { 'terraform_fmt' },
   },
 }
 
