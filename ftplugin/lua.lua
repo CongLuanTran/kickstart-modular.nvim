@@ -1,5 +1,5 @@
 vim.pack.add {
-  'folke/lazydev.nvim',
+  'https://github.com/folke/lazydev.nvim',
 }
 
 require('lazydev').setup {
