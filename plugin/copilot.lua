@@ -5,6 +5,12 @@ vim.pack.add {
 }
 
 require('copilot').setup {
+  filetypes = {
+    terraform = false,
+    sh = function()
+      if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.') then return false end
+    end,
+  },
   suggestion = {
     keymap = {
       accept = '<C-l>',
@@ -23,3 +29,5 @@ vim.api.nvim_create_autocmd('User', {
   pattern = 'BlinkCmpMenuClose',
   callback = function() vim.b.copilot_suggestion_hidden = false end,
 })
+
+vim.cmd 'Copilot disable'
