@@ -3,6 +3,68 @@ vim.pack.add {
   'https://github.com/neovim/nvim-lspconfig',
 }
 
+local servers = {
+  lua_ls = {},
+  bashls = {
+    filetypes = { 'bash', 'sh', 'zsh' },
+  },
+  fish_lsp = {},
+  clangd = {},
+  vtsls = {},
+  pyrefly = {
+    settings = {
+      python = {
+        pyrefly = {
+          displayTypeErrors = 'force-on',
+        },
+      },
+    },
+  },
+  -- basedpyright = {
+  --   settings = {
+  --     basedpyright = {
+  --       disableOrganizeImports = true,
+  --       analysis = {
+  --         typeCheckingMode = 'basic',
+  --       },
+  --     },
+  --   },
+  -- },
+  bacon_ls = {},
+  ruff = {},
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require('schemastore').json.schemas(),
+        validate = { enable = true },
+      },
+    },
+  },
+  html = {},
+  cssls = {},
+  vimls = {},
+  -- marksman = {},
+  tombi = {},
+  yamlls = {},
+  jdtls = {},
+  emmet_language_server = {},
+  tailwindcss = {},
+  tinymist = {
+    settings = {
+      formatterMode = 'typstyle',
+      formatterProseWrap = true,
+      formatterPrintWidth = 80,
+    },
+  },
+  denols = {},
+  oxlint = {},
+  gopls = {},
+  docker_language_server = {},
+  zls = {},
+  terraformls = {},
+  tflint = {},
+}
+
 -- Brief aside: **What is LSP?**
 --
 -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -82,68 +144,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
   desc = 'LSP: Disable hover capability from Ruff',
 })
-
-local servers = {
-  lua_ls = {},
-  bashls = {
-    filetypes = { 'bash', 'sh', 'zsh' },
-  },
-  fish_lsp = {},
-  clangd = {},
-  vtsls = {},
-  pyrefly = {
-    settings = {
-      python = {
-        pyrefly = {
-          displayTypeErrors = 'force-on',
-        },
-      },
-    },
-  },
-  -- basedpyright = {
-  --   settings = {
-  --     basedpyright = {
-  --       disableOrganizeImports = true,
-  --       analysis = {
-  --         typeCheckingMode = 'basic',
-  --       },
-  --     },
-  --   },
-  -- },
-  bacon_ls = {},
-  ruff = {},
-  jsonls = {
-    settings = {
-      json = {
-        schemas = require('schemastore').json.schemas(),
-        validate = { enable = true },
-      },
-    },
-  },
-  html = {},
-  cssls = {},
-  vimls = {},
-  -- marksman = {},
-  tombi = {},
-  yamlls = {},
-  jdtls = {},
-  emmet_language_server = {},
-  tailwindcss = {},
-  tinymist = {
-    settings = {
-      formatterMode = 'typstyle',
-      formatterProseWrap = true,
-      formatterPrintWidth = 80,
-    },
-  },
-  denols = {},
-  oxlint = {},
-  gopls = {},
-  docker_language_server = {},
-  zls = {},
-  terraformls = {},
-  tflint = {},
-}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp_attach_markdown_oxide', { clear = true }),
