@@ -1,5 +1,6 @@
 vim.pack.add {
   'https://github.com/nvim-mini/mini.nvim',
+  'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
 }
 
 -- Better Around/Inside textobjects
@@ -8,7 +9,22 @@ vim.pack.add {
 --  - va)  - [V]isually select [A]round [)]paren
 --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
 --  - ci'  - [C]hange [I]nside [']quote
-require('mini.ai').setup { n_lines = 500 }
+local ts = require('mini.ai').gen_spec.treesitter
+require('mini.ai').setup {
+  custom_textobjects = {
+    F = ts { a = '@function.outer', i = '@function.inner' },
+    k = ts { a = '@block.outer', i = '@block.inner' },
+    d = ts { a = '@conditional.outer', i = '@conditional.inner' },
+  },
+  mappings = {
+    around_next = '',
+    inside_next = '',
+    around_last = '',
+    inside_last = '',
+  },
+  n_lines = 500,
+}
+
 
 -- Add/delete/replace surroundings (brackets, quotes, etc.)
 --
