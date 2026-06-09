@@ -5,6 +5,7 @@ vim.pack.add {
   'https://git.barrettruth.com/barrettruth/blink-cmp-ghostty.git',
   'https://github.com/disrupted/blink-cmp-conventional-commits',
   'https://github.com/archie-judd/blink-cmp-words',
+  'https://github.com/folke/lazydev.nvim',
 }
 local cmp = require 'blink.cmp'
 cmp.build():wait(60000)
