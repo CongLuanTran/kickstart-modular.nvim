@@ -63,6 +63,9 @@ local servers = {
   zls = {},
   terraformls = {},
   tflint = {},
+  qmlls = {
+    cmd = { '/usr/lib/qt6/bin/qmlls' },
+  },
 }
 
 -- Brief aside: **What is LSP?**
