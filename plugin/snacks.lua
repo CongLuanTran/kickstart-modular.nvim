@@ -47,13 +47,7 @@ Snacks.setup {
 
   -- Picker and explorer
   explorer = {},
-  picker = {
-    sources = {
-      explorer = {},
-      gh_issue = {},
-      gh_pr = {},
-    },
-  },
+  picker = {},
 
   -- Utilities
   scope = {},
@@ -204,9 +198,7 @@ map('n', 'grt', Snacks.picker.lsp_type_definitions, {
 })
 
 -- Search
-map('n', '<leader>sh', function() Snacks.picker.help() end, {
-  desc = '[S]earch [H]elp',
-})
+map('n', '<leader>sh', function() Snacks.picker.help() end, { desc = '[S]earch [H]elp' })
 map('n', '<leader>sk', function() Snacks.picker.keymaps() end, { desc = '[S]earch [K]eymaps' })
 map('n', '<leader>sf', function() Snacks.picker.files() end, { desc = '[S]earch [F]iles' })
 map({ 'n', 'x' }, '<leader>sw', function() Snacks.picker.grep_word() end, { desc = '[S]earch current [W]ord' })
@@ -217,11 +209,13 @@ map('n', '<leader>s.', function() Snacks.picker.recent() end, { desc = '[S]earch
 map('n', '<leader><leader>', function() Snacks.picker.buffers() end, { desc = '[ ] Find existing buffers' })
 map('n', '<leader>/', function() Snacks.picker.lines() end, { desc = '[/] Fuzzily search in curent buffer' })
 map('n', '<leader>s/', function() Snacks.picker.grep_buffers() end, { desc = '[S]earch [/] in Open Buffers' })
-map('n', '<leader>sn', function() Snacks.picker.files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim Config' })
+map('n', '<leader>sN', function() Snacks.picker.files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim Config' })
+map('n', '<leader>sn', Snacks.picker.notifications, { desc = '[S]earch [N]otifications' })
 map('n', '<leader>sa', function() Snacks.picker.autocmds() end, { desc = '[S]earch [A]utocmds' })
 map('n', 'fleader>sc', function() Snacks.picker.commands() end, { desc = '[S]earch [C]ommands' })
 map('n', '<leader>sq', function() Snacks.picker.qflist() end, { desc = '[S]earch [Q]uickfix List' })
 map('n', '<leader>sm', function() Snacks.picker.marks() end, { desc = '[S]earch [M]arks' })
+map('n', '<leader>sp', function() Snacks.picker.pickers() end, { desc = '[S]earch [P]ickers' })
 -- Terminal
 map('n', '<C-t>', function() Snacks.terminal() end, { desc = 'Toggle Terminal' })
 -- Git
