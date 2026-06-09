@@ -3,11 +3,8 @@ vim.pack.add {
 }
 
 require('catppuccin').setup {
-  auto_integrations = true,
   term_colors = true,
   styles = {
     conditionals = {},
   },
 }
-
-vim.cmd.colorscheme 'catppuccin'
