@@ -25,6 +25,7 @@ require('mini.ai').setup {
   n_lines = 500,
 }
 
+require('mini.git').setup {}
 
 -- Add/delete/replace surroundings (brackets, quotes, etc.)
 --
