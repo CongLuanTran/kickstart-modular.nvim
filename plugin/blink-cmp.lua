@@ -8,6 +8,7 @@ vim.pack.add {
   'https://github.com/folke/lazydev.nvim',
 }
 local cmp = require 'blink.cmp'
+--- @diagnostic disable: undefined-field
 cmp.build():wait(60000)
 cmp.setup {
   keymap = {
@@ -32,7 +33,11 @@ cmp.setup {
     -- <c-k>: Toggle signature help
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    preset = 'default',
+    preset = 'enter',
+    ['<C-Space>'] = false,
+    ['<C-k>'] = false,
+    ["<C-'>"] = { 'show', 'show_documentation', 'hide_documentation' },
+    ['<C-s>'] = { 'show_signature', 'hide_signature' },
 
     -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
     --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -51,13 +56,13 @@ cmp.setup {
   },
 
   sources = {
-    default = { 'lsp', 'snippets', 'buffer', 'path' },
+    default = { 'lsp', 'snippets', 'path' },
     per_filetype = {
       lua = { inherit_defaults = true, 'lazydev' },
       ghostty = { 'ghostty' },
       gitcommit = { 'conventional_commits' },
-      text = { 'dictionary' },
-      markdown = { 'thesaurus' },
+      -- text = { 'dictionary' },
+      -- markdown = { 'thesaurus' },
     },
     providers = {
       lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink', score_offset = 100 },
