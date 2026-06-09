@@ -95,57 +95,57 @@ vim.keymap.set(
   { 'n', 'x', 'o' },
   ']K',
   function() require('nvim-treesitter-textobjects.move').goto_next_end('@block.outer', 'textobjects') end,
-  { desc = 'Next block start' }
+  { desc = 'Next block end' }
 )
 vim.keymap.set(
   { 'n', 'x', 'o' },
   ']F',
   function() require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer', 'textobjects') end,
-  { desc = 'Next function start' }
+  { desc = 'Next function end' }
 )
 vim.keymap.set(
   { 'n', 'x', 'o' },
   ']A',
   function() require('nvim-treesitter-textobjects.move').goto_next_end('@parameter.outer', 'textobjects') end,
-  { desc = 'Next argument start' }
+  { desc = 'Next argument end' }
 )
 -- Previous start
 vim.keymap.set(
   { 'n', 'x', 'o' },
   '[k',
   function() require('nvim-treesitter-textobjects.move').goto_previous_start('@block.outer', 'textobjects') end,
-  { desc = 'Next block start' }
+  { desc = 'Previous block start' }
 )
 vim.keymap.set(
   { 'n', 'x', 'o' },
   '[f',
   function() require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects') end,
-  { desc = 'Next function start' }
+  { desc = 'Previous function start' }
 )
 vim.keymap.set(
   { 'n', 'x', 'o' },
   '[a',
   function() require('nvim-treesitter-textobjects.move').goto_previous_start('@parameter.outer', 'textobjects') end,
-  { desc = 'Next argument start' }
+  { desc = 'Previous argument start' }
 )
 -- Next end
 vim.keymap.set(
   { 'n', 'x', 'o' },
   '[K',
   function() require('nvim-treesitter-textobjects.move').goto_previous_end('@block.outer', 'textobjects') end,
-  { desc = 'Next block start' }
+  { desc = 'Previous block end' }
 )
 vim.keymap.set(
   { 'n', 'x', 'o' },
   '[F',
   function() require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects') end,
-  { desc = 'Next function start' }
+  { desc = 'Previous function end' }
 )
 vim.keymap.set(
   { 'n', 'x', 'o' },
   '[A',
   function() require('nvim-treesitter-textobjects.move').goto_previous_end('@parameter.outer', 'textobjects') end,
-  { desc = 'Next argument start' }
+  { desc = 'Previous argument end' }
 )
 
 -- Swap keymaps
