@@ -57,13 +57,10 @@ Snacks.setup {
   scroll = {},
   words = {},
 
-  -- Git and Github
-  gh = {},
-  -- git = {},
-  lazygit = {},
-
   -- Terminal
-  terminal = {},
+  terminal = {
+    win = { style = 'float' },
+  },
 }
 
 Snacks.toggle.indent():map '<leader>u|'
@@ -204,24 +201,28 @@ map('n', '<leader>sf', function() Snacks.picker.files() end, { desc = '[S]earch 
 map({ 'n', 'x' }, '<leader>sw', function() Snacks.picker.grep_word() end, { desc = '[S]earch current [W]ord' })
 map('n', '<leader>sg', function() Snacks.picker.grep() end, { desc = '[S]earch by [G]rep' })
 map('n', '<leader>sd', function() Snacks.picker.diagnostics() end, { desc = '[S]earch [D]iagnostics' })
-map('n', '<leader>sr', function() Snacks.picker.resume() end, { desc = '[S]earch [R]esume' })
+map('n', '<leader>sr', function() Snacks.picker.registers() end, { desc = '[S]earch [R]egister' })
 map('n', '<leader>s.', function() Snacks.picker.recent() end, { desc = '[S]earch Recent Files ("." for repeat)' })
 map('n', '<leader><leader>', function() Snacks.picker.buffers() end, { desc = '[ ] Find existing buffers' })
 map('n', '<leader>/', function() Snacks.picker.lines() end, { desc = '[/] Fuzzily search in curent buffer' })
 map('n', '<leader>s/', function() Snacks.picker.grep_buffers() end, { desc = '[S]earch [/] in Open Buffers' })
 map('n', '<leader>sN', function() Snacks.picker.files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim Config' })
-map('n', '<leader>sn', Snacks.picker.notifications, { desc = '[S]earch [N]otifications' })
+map('n', '<leader>sn', function() Snacks.picker.notifications() end, { desc = '[S]earch [N]otifications' })
 map('n', '<leader>sa', function() Snacks.picker.autocmds() end, { desc = '[S]earch [A]utocmds' })
-map('n', 'fleader>sc', function() Snacks.picker.commands() end, { desc = '[S]earch [C]ommands' })
+map('n', '<leader>sc', function() Snacks.picker.commands() end, { desc = '[S]earch [C]ommands' })
 map('n', '<leader>sq', function() Snacks.picker.qflist() end, { desc = '[S]earch [Q]uickfix List' })
 map('n', '<leader>sm', function() Snacks.picker.marks() end, { desc = '[S]earch [M]arks' })
 map('n', '<leader>sp', function() Snacks.picker.pickers() end, { desc = '[S]earch [P]ickers' })
 -- Terminal
-map('n', '<C-t>', function() Snacks.terminal() end, { desc = 'Toggle Terminal' })
+map('n', '<C-t>', function() Snacks.terminal.focus() end, { desc = 'Toggle Terminal' })
 -- Git
-map('n', '<leader>gl', function() Snacks.lazygit() end, { desc = 'Open [L]azy[G]it' })
-map('n', '<leader>gi', function() Snacks.picker.gh_issue() end, { desc = 'Search [G]ithub [I]ssues' })
-map('n', '<leader>gp', function() Snacks.picker.gh_pr() end, { desc = 'Search [G]ithub [P]R' })
+map('n', '<leader>gL', function() Snacks.lazygit() end, { desc = 'Open [L]azy[G]it' })
+map('n', '<leader>gl', function() Snacks.picker.git_log() end, { desc = '[G]it [L]og' })
+map('n', '<localleader>gl', function() Snacks.picker.git_log_file() end, { desc = 'File [G]it [L]og' })
+map('n', '<leader>gd', function() Snacks.picker.git_diff() end, { desc = '[G]it [D]iff' })
+map('n', '<leader>gb', function() Snacks.picker.git_branches() end, { desc = '[G]it [B]ranches' })
+map('n', '<leader>gi', function() Snacks.picker.gh_issue() end, { desc = '[G]ithub [I]ssues' })
+map('n', '<leader>gp', function() Snacks.picker.gh_pr() end, { desc = '[G]ithub [P]R' })
 -- Explorer
 map('n', '<leader>E', function() Snacks.explorer { cwd = vim.fn.expand '%:p:h' } end, { desc = 'Toggle [E]xplorer at cwd' })
 map('n', '<leader>e', function()
