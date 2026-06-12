@@ -61,14 +61,14 @@ statusline.setup {
       local macro = vim.g.macro_recording
 
       return MiniStatusline.combine_groups {
-        { hl = mode_hl,                 strings = { mode } },
+        { hl = mode_hl, strings = { mode } },
         { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics } },
         '%<', -- Mark general truncate point
         { hl = 'MiniStatuslineFilename', strings = { filename } },
         '%=', -- End left alignment
         { hl = 'MiniStatuslineFilename', strings = { macro } },
         { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
-        { hl = mode_hl,                  strings = { search, location } },
+        { hl = mode_hl, strings = { search, location } },
       }
     end,
   },
@@ -97,6 +97,20 @@ vim.api.nvim_create_autocmd('RecordingLeave', {
     vim.cmd 'redrawstatus'
   end,
 })
+
+local hipatterns = require 'mini.hipatterns'
+hipatterns.setup {
+  highlighters = {
+    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+    fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+    hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+    todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+    note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+
+    -- Highlight hex color strings (`#rrggbb`) using that color
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+  },
+}
 
 -- ... and there is more!
 --  Check out: https://github.com/nvim-mini/mini.nvim
