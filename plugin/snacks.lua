@@ -56,6 +56,7 @@ Snacks.setup {
   quickfile = {},
   scroll = {},
   words = {},
+  image = {},
 
   -- Terminal
   terminal = {
