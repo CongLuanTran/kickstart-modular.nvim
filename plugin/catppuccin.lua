@@ -3,8 +3,22 @@ vim.pack.add {
 }
 
 require('catppuccin').setup {
-  term_colors = true,
-  styles = {
-    conditionals = {},
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  custom_highlights = function(colors)
+    return {
+      GitSignsStagedAdd = { fg = colors.teal },
+      GitSignsStagedAddNr = { link = 'GitSignsStagedAdd', bold = true },
+      GitSignsStagedChange = { fg = colors.peach },
+      GitSignsStagedChangeNr = { link = 'GitSignsStagedChange', bold = true },
+      GitSignsStagedDelete = { link = 'GitSignsDelete' },
+    }
+  end,
+  intergrations = {
+    snacks = {
+      enabled = true,
+    },
   },
 }
