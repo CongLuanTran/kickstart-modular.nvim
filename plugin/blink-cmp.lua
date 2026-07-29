@@ -61,6 +61,7 @@ cmp.setup {
       lua = { inherit_defaults = true, 'lazydev' },
       ghostty = { 'ghostty' },
       gitcommit = { 'conventional_commits' },
+      codecompanion = { 'codecompanion' },
       -- text = { 'dictionary' },
       -- markdown = { 'thesaurus' },
     },
