@@ -7,4 +7,18 @@ vim.pack.add {
   },
 }
 
-require('codecompanion').setup {}
+require('codecompanion').setup {
+  interactions = {
+    cli = {
+      agent = 'copilot',
+      agents = {
+        copilot = {
+          cmd = 'copilot',
+          args = {},
+          description = 'Copilot CLI',
+          provider = 'terminal',
+        },
+      },
+    },
+  },
+}
