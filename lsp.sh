@@ -42,6 +42,9 @@ if command -v go >/dev/null 2>&1; then
   if ! command -v tflint >/dev/null 2>&1; then
     go install github.com/terraform-linters/tflint@latest
   fi
+  if ! command -v dockerfmt >/dev/null 2>&1; then
+    go install github.com/reteps/dockerfmt@latest
+  fi
 else
   echo "go was not found, the follow LSPs are not installed:
   docker-language-server"

@@ -32,6 +32,7 @@ conform.setup {
     vue = { 'oxfmt' },
     markdown = { 'prettierd', 'prettier', stop_after_first = true },
     terraform = { 'terraform_fmt' },
+    dockerfile = { 'dockerfmt' },
   },
 }
 
