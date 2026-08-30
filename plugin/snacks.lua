@@ -97,26 +97,23 @@ Snacks.toggle
     id = 'harper_local',
     name = 'Local Harper',
     get = function()
-      if not vim.lsp.is_enabled 'harper_ls' then return false end
-
-      return #vim.lsp.get_clients {
-        bufnr = 0,
-        name = 'harper_ls',
-      } > 0
+      local clients = vim.lsp.get_clients { bufnr = 0, name = 'harper_ls' }
+      return #clients > 0
     end,
     set = function(state)
-      local bufnr = vim.api.nvim_get_current_buf()
-
-      local clients = vim.lsp.get_clients {
-        bufnr = bufnr,
-        name = 'harper_ls',
-      }
-
       if state then
-        if #clients == 0 then vim.lsp.start(vim.tbl_extend('force', vim.lsp.config.harper_ls, { bufnr = bufnr })) end
+        local config = vim.lsp.config.harper_ls
+        if config ~= nil then
+          config.root_dir = config.root_dir or vim.fs.root(0, config.root_markers)
+          vim.lsp.start(config)
+        end
       else
+        local clients = vim.lsp.get_clients {
+          bufnr = 0,
+          name = 'harper_ls',
+        }
         for _, client in ipairs(clients) do
-          vim.lsp.buf_detach_client(bufnr, client.id)
+          vim.lsp.buf_detach_client(0, client.id)
         end
       end
     end,
