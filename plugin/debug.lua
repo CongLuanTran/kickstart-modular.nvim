@@ -78,5 +78,6 @@ map('n', '<leader>do', function() require('dap').step_over() end, { desc = 'Debu
 map('n', '<leader>dO', function() require('dap').step_out() end, { desc = 'Debug: Step Out' })
 map('n', '<leader>db', function() require('dap').toggle_breakpoint() end, { desc = 'Debug: Toggle Breakpoint' })
 map('n', '<leader>dB', function() require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, { desc = 'Debug: Set Breakpoint' })
+map('n', '<leader>dq', function() require('dap').terminate() end, { desc = 'Debug: Quit' })
 -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
 map('n', '<leader>ds', function() require('dapui').toggle() end, { desc = 'Debug: See last session result.' })
