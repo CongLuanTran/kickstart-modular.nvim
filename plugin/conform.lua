@@ -12,6 +12,7 @@ conform.setup {
   },
   formatters_by_ft = {
     lua = { 'stylua' },
+    luau = { 'stylua' },
     -- rust = { 'rustfmt' },
     python = {
       -- fix auto-fixable
