@@ -220,6 +220,8 @@ map('n', '<localleader>gl', function() Snacks.picker.git_log_file() end, { desc 
 map('n', '<leader>gd', function() Snacks.picker.git_diff() end, { desc = '[G]it [D]iff' })
 map('n', '<leader>gb', function() Snacks.picker.git_branches() end, { desc = '[G]it [B]ranches' })
 map('n', '<leader>gi', function() Snacks.picker.gh_issue() end, { desc = '[G]ithub [I]ssues' })
+map('n', '<leader>gs', function() Snacks.picker.git_status() end, { desc = '[G]it [S]tatus' })
+map('n', '<leader>gS', function() Snacks.picker.git_stash() end, { desc = '[G]it [S]tash' })
 map('n', '<leader>gp', function() Snacks.picker.gh_pr() end, { desc = '[G]ithub [P]R' })
 -- Explorer
 map('n', '<leader>E', function() Snacks.explorer { cwd = vim.fn.expand '%:p:h' } end, { desc = 'Toggle [E]xplorer at cwd' })
